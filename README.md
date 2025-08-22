@@ -120,6 +120,7 @@ Macro Name    : %matrix_identity
    run;
 ~~~
 <img width="119" height="88" alt="Image" src="https://github.com/user-attachments/assets/c4e6b8bf-fac8-44e3-81fa-9a22f08000c1" />
+
 ---
  
 ## `%matrix_determinant()` macro <a name="matrixdeterminant-macro-2"></a> ######
