@@ -84,6 +84,7 @@ Example Usage:
 ~~~
 <img width="242" height="153" alt="Image" src="https://github.com/user-attachments/assets/dbf02f2e-9fa1-438b-841d-2bb280bf7fc0" />  
 ---
+
 ## `%matrix_identity()` macro <a name="matrixidentity-macro-3"></a> ######
 
 Macro Name    : %matrix_identity
