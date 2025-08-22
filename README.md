@@ -48,5 +48,40 @@ Macro Name    : %matrix_mult
 
  Notes         :
    - If dimensions do not match, the macro stops with a warning message.
-  
+---
+
+## `%matrix_inverse()` macro <a name="matrixinverse-macro-4"></a> ######
+
+Macro Name    : %matrix_inverse
+
+Purpose       :
+  Compute the inverse of a square numeric matrix stored in a SAS dataset,
+  using PROC FCMP and the CALL INV routine. Designed for environments
+  without SAS/IML.
+
+Parameters    :
+~~~text
+  dataset=         Input dataset containing the numeric matrix to be inverted.
+  output_dataset=  Output dataset that will contain the inverse matrix.
+                   Default = WORK.OUTPUT_INV
+~~~
+Requirements / Notes:
+  - Only numeric variables are considered; character variables are dropped.
+  - The input dataset must represent a square matrix (same number of rows and columns).
+  - If the matrix is singular or nearly singular, CALL INV will fail or return
+    unstable results. No pseudo-inverse is computed in this macro.
+  - The output dataset will contain variables named col1, col2, ..., col3.
+
+Example Usage:
+~~~sas
+  data wk1;
+    a=3; b=5; c=0; output;
+    a=9; b=1; c=2; output;
+    a=8; b=7; c=9; output;
+  run;
+
+  %matrix_inverse(dataset=wk1, output_dataset=inv_wk1);
+~~~
+<img width="242" height="153" alt="Image" src="https://github.com/user-attachments/assets/dbf02f2e-9fa1-438b-841d-2bb280bf7fc0" />  
+
 ---
