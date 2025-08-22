@@ -194,3 +194,43 @@ Macro Name    : %matrix_transpose
 <img width="356" height="165" alt="Image" src="https://github.com/user-attachments/assets/08e90bcb-f2ad-4516-b316-146db89b23ab" />
 
 ---
+
+## `%matrix_cholesky_decomposition()` macro <a name="matrixcholeskydecomposition-macro-1"></a> ######
+
+Macro Name    : %matrix_cholesky_decomposition
+
+ Purpose       :
+   Perform a Cholesky decomposition of a square numeric matrix stored in a SAS dataset.
+   The macro computes the lower-triangular matrix L such that A = L*L',
+   and also outputs its transpose (L').
+
+ Parameters    :
+ ~~~text
+   dataset=       Input dataset containing the numeric square matrix.
+   output_L=      Output dataset for the lower-triangular matrix L.
+                  Default = WORK.OUTPUT_L
+   output_TL=     Output dataset for the transpose of L (L').
+                  Default = WORK.OUTPUT_TL
+~~~
+
+ Requirements / Notes:
+   - Only numeric variables are considered; character variables are ignored.
+   - The input matrix must be symmetric and positive definite.
+   - If the matrix is not positive definite, CALL CHOL will fail even with validation.
+   - The output datasets will contain variables col1, col2, ..., coln.
+
+Example Usage:
+~~~sas
+  data wk1;
+    a=2; b=2; c=3; output;
+    a=2; b=4; c=2; output;
+    a=3; b=2; c=6; output;
+  run;
+
+  %matrix_cholesky_decomposition(dataset=wk1,
+                                 output_L=work.Lmat,
+                                 output_TL=work.LTmat);
+~~~
+
+<img width="603" height="234" alt="Image" src="https://github.com/user-attachments/assets/231012ef-80d4-4d65-92b5-c58fdb0d53ce" />  
+
