@@ -121,4 +121,41 @@ Macro Name    : %matrix_identity
 ~~~
 <img width="119" height="88" alt="Image" src="https://github.com/user-attachments/assets/c4e6b8bf-fac8-44e3-81fa-9a22f08000c1" />
 ---
+ 
+## `%matrix_determinant()` macro <a name="matrixdeterminant-macro-2"></a> ######
 
+Macro Name    : %matrix_determinant
+
+ Purpose       :
+   Compute the determinant of a square numeric matrix stored in a SAS dataset,
+   using PROC FCMP and the CALL DET routine. Designed for environments
+   without SAS/IML.
+
+ Parameters    :
+ ~~~text
+   dataset=         Input dataset representing the numeric matrix.
+   output_dataset=  Output dataset to store the determinant as a 1×1 matrix.
+                    Default = WORK.OUTPUT_DET
+~~~
+
+ Requirements / Notes:
+   - Only numeric variables are considered; character variables are ignored.
+   - The input dataset must represent a square matrix. Otherwise, the macro stops with an error.
+   - If the matrix is singular or nearly singular, the determinant may be 0 or numerically unstable.
+   - The output dataset will contain a single cell (col1) with the determinant value.
+
+ Example Usage:
+ ~~~sas
+   data wk1;
+     a=2; b=1; output;
+     a=3; b=4; output;
+   run;
+
+   %matrix_determinant(dataset=wk1, output_dataset=work.det_wk1);
+
+   proc print data=work.det_wk1;
+   run;
+~~~
+<img width="209" height="160" alt="Image" src="https://github.com/user-attachments/assets/6a227459-c9e2-4ae6-adc7-c1ed2e1734de" />  
+
+---
