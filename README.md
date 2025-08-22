@@ -44,6 +44,7 @@ Macro Name    : %matrix_mult
 
    %matrix_mult(dataset1=wk1, dataset2=wk2, output_dataset=prod_matrix);
 ~~~
+<img width="250" height="231" alt="Image" src="https://github.com/user-attachments/assets/5ec7ea32-c4e5-4ccd-b59f-7b60f7f592e3" />  
 
  Notes         :
    - If dimensions do not match, the macro stops with a warning message.
