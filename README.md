@@ -160,3 +160,37 @@ Macro Name    : %matrix_determinant
 <img width="209" height="160" alt="Image" src="https://github.com/user-attachments/assets/6a227459-c9e2-4ae6-adc7-c1ed2e1734de" />  
 
 ---
+
+## `%matrix_transpose()` macro <a name="matrixtranspose-macro-6"></a> ######
+
+Macro Name    : %matrix_transpose
+
+ Purpose       :
+   Transpose a numeric matrix stored in a SAS dataset using PROC FCMP.
+   The macro reads numeric variables into an array, transposes the matrix,
+   and writes the result to an output dataset.
+
+ Parameters    :
+ ~~~text
+   dataset=         Input dataset containing numeric variables to be transposed.
+   output_dataset=  Output dataset name to store the transposed matrix.
+                    Default = WORK.OUTPUT_TRAN
+~~~
+ Requirements / Notes:
+   - Only numeric variables are considered; character variables are ignored.
+   - The output dataset will contain variables named col1, col2, ..., coln.
+
+ Example Usage:
+ ~~~sas
+   data wk1;
+     a=3; b=5; output;
+     a=0; b=9; output;
+     a=1; b=2; output;
+   run;
+
+   %matrix_transpose(dataset=wk1, output_dataset=tran_wk1);
+~~~
+
+<img width="356" height="165" alt="Image" src="https://github.com/user-attachments/assets/08e90bcb-f2ad-4516-b316-146db89b23ab" />
+
+---
