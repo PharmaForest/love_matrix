@@ -4,7 +4,7 @@ love_matrix: A SAS macro toolkit for basic matrix operations (multiply, inverse,
 
 ## `%matrix_mult()` macro <a name="matrixmult-macro-5"></a> ######
 
-### Purpose       :
+Purpose       :
    Perform matrix multiplication between two input SAS datasets containing 
    only numeric variables. The macro extracts numeric columns, validates 
    dimensions, and outputs the resulting product matrix as a SAS dataset.
@@ -50,8 +50,6 @@ love_matrix: A SAS macro toolkit for basic matrix operations (multiply, inverse,
 
 ## `%matrix_inverse()` macro <a name="matrixinverse-macro-4"></a> ######
 
-Macro Name    : %matrix_inverse
-
 Purpose       :
   Compute the inverse of a square numeric matrix stored in a SAS dataset,
   using PROC FCMP and the CALL INV routine. Designed for environments
@@ -85,7 +83,6 @@ Example Usage:
 
 ## `%matrix_identity()` macro <a name="matrixidentity-macro-3"></a> ######
 
-Macro Name    : %matrix_identity
 
  Purpose       :
    Generate an identity matrix of a specified size using PROC FCMP.
@@ -123,8 +120,6 @@ Macro Name    : %matrix_identity
  
 ## `%matrix_determinant()` macro <a name="matrixdeterminant-macro-2"></a> ######
 
-Macro Name    : %matrix_determinant
-
  Purpose       :
    Compute the determinant of a square numeric matrix stored in a SAS dataset,
    using PROC FCMP and the CALL DET routine. Designed for environments
@@ -160,8 +155,6 @@ Macro Name    : %matrix_determinant
 ---
 
 ## `%matrix_transpose()` macro <a name="matrixtranspose-macro-6"></a> ######
-
-Macro Name    : %matrix_transpose
 
  Purpose       :
    Transpose a numeric matrix stored in a SAS dataset using PROC FCMP.
