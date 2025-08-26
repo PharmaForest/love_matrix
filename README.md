@@ -4,7 +4,7 @@ love_matrix: A SAS macro toolkit for basic matrix operations (multiply, inverse,
 
 ## `%matrix_mult()` macro <a name="matrixmult-macro-5"></a> ######
 
-** Purpose       :**
+### Purpose       :
    Perform matrix multiplication between two input SAS datasets containing 
    only numeric variables. The macro extracts numeric columns, validates 
    dimensions, and outputs the resulting product matrix as a SAS dataset.
